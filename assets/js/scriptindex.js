@@ -5,33 +5,24 @@ function validar(){
     let eApellido = document.getElementById("apellido")
     let vApellido = eApellido.value
     let eErrorApellido = document.getElementById("errorApellido")
-    if (vNombre.length < 3){
-        console.log("pocos caracteres")
-        eErrorNombre.innerText = "el nombre debe tener al menos 3 caracteres"
-        eNombre.style.backgroundColor = "red"
-        eNombre.style.color = "white"
-    }
-    else{
-    console.log("Todo bien")
-    eErrorNombre.innerText = ""
-    eNombre.style.backgroundColor = "green"
-    }
-    if (vApellido.length < 3){
-        console.log("pocos caracteres")
-        eErrorApellido.innerText = "el nombre debe tener al menos 3 caracteres"
-        eApellido.style.background = "red"
-        eApellido.style.color = "yellow"
-    }
-    else{
-        console.log("Todo Correcto")
-        eErrorApellido.innerText = ""
-        eApellido.style.backgroundColor = "green"
-    }
-    if (vNombre.length < 3 && vApellido.length < 3){
-        alert("el nombre debe tener al menos 3 caracteres")
+    validarLargoMinimo(eNombre,vNombre,eErrorNombre)
+    validarLargoMinimo(eApellido,vApellido,eErrorApellido)
 
-    }
     
+}
+
+function validarLargoMinimo(elemento,valor,eError){
+    if(valor.length < 3){
+        console.log("Pocos caracteres")
+        alert("Debes ingresar mas de 3 caracteres")
+        eError.innerText = "debes ingresar mas de 3 caracteres"
+        elemento.style.backgroundColor = "red"
+        elemento.style.color = "white"
+    }else{
+        console.log("Todo bien")
+        eError.innerText = ""
+        eError.style.backgroundColor = "green"
+    }
 }
 
 // def validar():
