@@ -43,7 +43,7 @@ function cargarDatos(){
     let mapPersonas = personas.map((p,index)=>{
         return "<tr><td>"+p.nombre+
                 "</td></th>"+p.apellido+
-                "</td><tr><button type='button' value='"+index+"'>Eliminar</button></td></tr"
+                "</td><tr><button type='button' value='"+index+"'>Eliminar</button></td></tr>"
     })
     let tablaPersonas = document.getElementById("tablaPersonas")
     let strTablaPersonas = mapPersonas.join("")
